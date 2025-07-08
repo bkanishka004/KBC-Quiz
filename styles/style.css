@@ -1,0 +1,212 @@
+/* styles/style.css */
+/* Paste your full CSS from before here */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #001524 0%, #55356e 100%);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 960px;
+  padding: 20px;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #f2b418;
+  text-shadow: 1px 1px 4px #000;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 5px #000, 0 0 15px #ffd700;
+  }
+  to {
+    text-shadow: 2px 2px 5px #000, 0 0 25px #ffd700;
+  }
+}
+
+.game-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.money-display,
+.timer,
+.question-number {
+  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.money-display {
+  color: #00ff00;
+}
+
+.timer.warning {
+  color: #ff0000;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.question-container {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 2px solid #ffd700;
+  margin-bottom: 20px;
+}
+
+.question-text {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.option-btn {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid #ffd700;
+  text-align: left;
+}
+
+.option-btn:hover {
+  background: rgba(255, 215, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.option-btn.correct {
+  background-color: #238823;
+  color: #000;
+}
+
+.option-btn.wrong {
+  background-color: #d2222d;
+}
+
+.option-btn.hidden {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.lifelines {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.lifeline-btn {
+  background: rgba(255, 105, 180, 0.2);
+  border: 2px solid #ff69b4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lifeline-btn:hover {
+  background: rgba(255, 105, 180, 0.4);
+  transform: translateY(-2px);
+}
+
+.lifeline-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.success {
+  background: rgba(0, 255, 0, 0.1);
+  color: #00ff00;
+  border: 1px solid #00ff00;
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+
+.start-screen,
+.game-over {
+  text-align: center;
+  padding: 30px;
+}
+
+.start-btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #ffd700;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #ffed4e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.final-score {
+  font-size: 1.8em;
+  color: #ffd700;
+}

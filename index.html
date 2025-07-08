@@ -1,0 +1,73 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaun Banega Crorepati - KBC Quiz</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="title">KAUN BANEGA CROREPATI</h1>
+        <p>चलो खेलते हैं !</p>
+      </div>
+
+      <div class="game-container">
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+          <h2>Welcome to KBC Quiz!</h2>
+          <p>Test your knowledge and win virtual money!</p>
+          <br />
+          <button id="startBtn" class="start-btn">Start Game</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" style="display: none">
+          <div class="money-display">
+            Prize Money: ₹<span id="currentMoney">0</span>
+          </div>
+
+          <div class="question-number">
+            Question <span id="questionNum">1</span> of
+            <span id="totalQuestions">10</span>
+          </div>
+
+          <div class="timer">Time: <span id="timeLeft">30</span> seconds</div>
+
+          <div class="question-container">
+            <div class="question-text" id="questionText"></div>
+            <div class="options-grid" id="optionsGrid"></div>
+          </div>
+
+          <div class="lifelines">
+            <button id="fiftyFifty" class="lifeline-btn">50:50</button>
+            <button id="skipQuestion" class="lifeline-btn">
+              Skip Question
+            </button>
+          </div>
+
+          <div id="message" class="message" style="display: none"></div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" style="display: none">
+          <div class="game-over">
+            <h2>Game Over!</h2>
+            <div class="final-score">
+              You won: ₹<span id="finalMoney">0</span>
+            </div>
+            <p id="gameOverMessage"></p>
+            <br />
+            <button id="restartBtn" class="start-btn">Play Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
